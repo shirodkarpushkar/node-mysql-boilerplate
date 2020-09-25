@@ -2,7 +2,7 @@ var mysql = require("mysql");
 var config = require("../config");
 
 var con = mysql.createConnection({
-  port: config.PORT,
+  port: config.DBPORT,
   host: config.DBHost,
   user: config.DBUser,
   password: config.DBPassword,

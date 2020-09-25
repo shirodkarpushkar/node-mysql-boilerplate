@@ -1,5 +1,5 @@
 module.exports = {
-  PORT: 3306,
+  DBPORT: 3306,
   DBHost: "localhost",
   DBUser: "root",
   DBPassword: "root@123",
