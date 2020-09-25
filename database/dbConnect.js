@@ -1,5 +1,5 @@
 var mysql = require("mysql");
-var config = require("../../config");
+var config = require("../config");
 
 var con = mysql.createConnection({
   port: config.PORT,
