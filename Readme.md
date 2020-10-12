@@ -12,6 +12,7 @@ Simple Boiler plate for making large server applications.
 
 - ES6
 - module aliases
+- swagger UI
 
 ### Dependencies
 
