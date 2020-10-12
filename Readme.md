@@ -57,6 +57,9 @@ npm start
 npm start:production
 ```
 
+### Basic Schema
+Import basic sql schema for database present at database/BasicDatabaseSchema.sql
+
 ### Development
 
 Want to contribute? Great! Pull Request's shall be verified and accepted.
