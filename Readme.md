@@ -6,7 +6,7 @@ Simple Boiler plate for making large server applications.
 - high scalability
 - Installed with required dependencies
 - contains Basic Schema
-- containes ready made apis
+- It has some common API like registration, login, verify email, forgot password, reset password change password, get user details, upload single/multiple images.
 
 # New Features!
 
