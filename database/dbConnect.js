@@ -1,5 +1,5 @@
-var mysql = require("mysql");
-var config = require("../config");
+import mysql from 'mysql'
+import config from '@config'
 
 var con = mysql.createConnection({
   port: config.DBPORT,

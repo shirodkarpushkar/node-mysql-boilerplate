@@ -1,0 +1,585 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0",
+    "title": "Smart Store",
+    "description": "Smart store apis",
+    "contact": {}
+  },
+  "host": "localhost:3000",
+  "basePath": "/",
+  "schemes": ["http"],
+  "consumes": ["application/json"],
+  "produces": ["application/json"],
+  "paths": {
+    "/customers/register": {
+      "post": {
+        "description": "Registration request",
+        "summary": "registration",
+        "tags": ["customers"],
+        "operationId": "registration",
+        "deprecated": false,
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/registrationrequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/customers/verifyemail": {
+      "post": {
+        "description": "email verification",
+        "summary": "Verify Email",
+        "tags": ["customers"],
+        "operationId": "VerifyEmail",
+        "deprecated": false,
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/VerifyEmailRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/customers/changepassword": {
+      "put": {
+        "description": "Request to change password",
+        "summary": "Change Password",
+        "tags": ["customers"],
+        "operationId": "ChangePassword",
+        "deprecated": false,
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "auth",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/ChangePasswordRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/customers/signin": {
+      "post": {
+        "description": "Sign In",
+        "summary": "Sign In",
+        "tags": ["customers"],
+        "operationId": "SignIn",
+        "deprecated": false,
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/SignInRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/customers/forgotpassword": {
+      "post": {
+        "description": "Forgot Password",
+        "summary": "Forgot Password",
+        "tags": ["customers"],
+        "operationId": "ForgotPassword",
+        "deprecated": false,
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/ForgotPasswordRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/customers/resetpassword": {
+      "put": {
+        "description": "Reset Password",
+        "summary": "Reset Password",
+        "tags": ["customers"],
+        "operationId": "ResetPassword",
+        "deprecated": false,
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/ResetPasswordRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/customers/profile": {
+      "get": {
+        "description": "get profile",
+        "summary": "get profile",
+        "tags": ["customers"],
+        "operationId": "getprofile",
+        "deprecated": false,
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "auth",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      },
+      "patch": {
+        "description": "get profile",
+        "summary": "update profile",
+        "tags": ["customers"],
+        "operationId": "updateprofile",
+        "deprecated": false,
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "auth",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/updateprofilerequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/images": {
+      "post": {
+        "description": "post request to upload images",
+        "summary": "upload image",
+        "tags": ["images"],
+        "operationId": "uploadimage",
+        "deprecated": false,
+        "produces": ["application/json"],
+        "consumes": ["application/x-www-form-urlencoded"],
+        "parameters": [
+          {
+            "name": "image",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/products": {
+      "get": {
+        "description": "get all Products",
+        "summary": "get all Products",
+        "tags": ["products"],
+        "operationId": "getallProducts",
+        "deprecated": false,
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "auth",
+            "in": "header",
+            "required": false,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    },
+    "/products/4": {
+      "get": {
+        "description": "get all Products",
+        "summary": "get Product By Id",
+        "tags": ["products"],
+        "operationId": "getProductById",
+        "deprecated": false,
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "auth",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/categories": {
+      "get": {
+        "description": "get all Products",
+        "summary": "get all Categories",
+        "tags": ["categories"],
+        "operationId": "getallCategories",
+        "deprecated": false,
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "auth",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/categories/3": {
+      "get": {
+        "description": "get all Products",
+        "summary": "get Category By Id",
+        "tags": ["categories"],
+        "operationId": "getCategoryById",
+        "deprecated": false,
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "auth",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    }
+  },
+  "securityDefinitions": {
+    "api_key": {
+      "type": "apiKey",
+      "name": "auth",
+      "in": "header"
+    }
+  },
+  "definitions": {
+    "registrationrequest": {
+      "title": "registrationrequest",
+      "example": {
+        "firstName": "Monca2",
+        "lastName": "Payne",
+        "email": "shirodkarpushkar.9@gmail.com",
+        "password": "password",
+        "avatar": "22",
+        "addressLine1": "Kamat Estates",
+        "addressLine2": "3-t-1,Tonca",
+        "city": "Miramar",
+        "state": "Goa",
+        "zipcode": "403002"
+      },
+      "type": "object",
+      "properties": {
+        "firstName": {
+          "type": "string"
+        },
+        "lastName": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        },
+        "avatar": {
+          "type": "string"
+        },
+        "addressLine1": {
+          "type": "string"
+        },
+        "addressLine2": {
+          "type": "string"
+        },
+        "city": {
+          "type": "string"
+        },
+        "state": {
+          "type": "string"
+        },
+        "zipcode": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "firstName",
+        "lastName",
+        "email",
+        "password",
+        "avatar",
+        "addressLine1",
+        "addressLine2",
+        "city",
+        "state",
+        "zipcode"
+      ]
+    },
+    "VerifyEmailRequest": {
+      "title": "VerifyEmailRequest",
+      "example": {
+        "token": "65794a68624763694f694a49557a49314e694973496e523563434936496b705856434a392e65794a6b59585268496a6f6963326870636d396b613246796348567a61477468636934355147647459576c734c6d4e7662534973496d6c68644349364d5459774d546b784d544d344e5377695a586877496a6f784e6a41784f546b334e7a673166512e5f70774375567259563571666d786b585a6b5266786d5252463446393045344c5779597943716e33734263"
+      },
+      "type": "object",
+      "properties": {
+        "token": {
+          "type": "string"
+        }
+      },
+      "required": ["token"]
+    },
+    "ChangePasswordRequest": {
+      "title": "ChangePasswordRequest",
+      "example": {
+        "oldPassword": "password2",
+        "newPassword": "password"
+      },
+      "type": "object",
+      "properties": {
+        "oldPassword": {
+          "type": "string"
+        },
+        "newPassword": {
+          "type": "string"
+        }
+      },
+      "required": ["oldPassword", "newPassword"]
+    },
+    "SignInRequest": {
+      "title": "SignInRequest",
+      "example": {
+        "email": "shirodkarpushkar.9@gmail.com",
+        "password": "password"
+      },
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        }
+      },
+      "required": ["email", "password"]
+    },
+    "ForgotPasswordRequest": {
+      "title": "ForgotPasswordRequest",
+      "example": {
+        "email": "shirodkarpushkar@gmail.com"
+      },
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string"
+        }
+      },
+      "required": ["email"]
+    },
+    "ResetPasswordRequest": {
+      "title": "ResetPasswordRequest",
+      "example": {
+        "token": "65794a68624763694f694a49557a49314e694973496e523563434936496b705856434a392e65794a6b59585268496a6f6963326870636d396b613246796348567a61477468636934355147647459576c734c6d4e7662534973496d6c68644349364d5459774d546b344d444d304d6977695a586877496a6f784e6a41794d4459324e7a517966512e34594263755654473742744e2d72374c4e5062644b4946324949764a7a7649426c455377522d576e756763",
+        "newPassword": "password"
+      },
+      "type": "object",
+      "properties": {
+        "token": {
+          "type": "string"
+        },
+        "newPassword": {
+          "type": "string"
+        }
+      },
+      "required": ["token", "newPassword"]
+    },
+    "updateprofilerequest": {
+      "title": "updateprofilerequest",
+      "example": {
+        "firstName": "Max",
+        "lastName": "Pain",
+        "avatar": 22,
+        "addressLine1": "Kamat Galaxy",
+        "addressLine2": "3-t-1,Tonca",
+        "city": "Miramar",
+        "state": "Goa",
+        "zipcode": "403002"
+      },
+      "type": "object",
+      "properties": {
+        "firstName": {
+          "type": "string"
+        },
+        "lastName": {
+          "type": "string"
+        },
+        "avatar": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "addressLine1": {
+          "type": "string"
+        },
+        "addressLine2": {
+          "type": "string"
+        },
+        "city": {
+          "type": "string"
+        },
+        "state": {
+          "type": "string"
+        },
+        "zipcode": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "firstName",
+        "lastName",
+        "avatar",
+        "addressLine1",
+        "addressLine2",
+        "city",
+        "state",
+        "zipcode"
+      ]
+    }
+  },
+  "tags": [
+    {
+      "name": "customers"
+    },
+    {
+      "name": "images",
+      "description": "Upload images"
+    },
+    {
+      "name": "products"
+    },
+    {
+      "name": "categories"
+    }
+  ]
+}

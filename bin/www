@@ -3,7 +3,7 @@
 /**
  * Module dependencies.
  */
-
+require('../babelConfiguration')
 var app = require('../app');
 var debug = require('debug')('todo-server:server');
 var http = require('http');

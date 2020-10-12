@@ -1,2 +1,17 @@
+
 node_modules/
 .vscode
+
+# lock files
+yarn.lock
+package-lock.json
+
+#public
+public
+
+#Local Sql
+LocalInstance*
+
+#ENV
+.env.local
+.env.production
