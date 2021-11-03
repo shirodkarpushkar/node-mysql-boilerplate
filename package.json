@@ -24,7 +24,7 @@
     "pug": "3.0.1",
     "serve-favicon": "^2.5.0",
     "swagger-ui-express": "^4.1.4",
-    "validator": "^13.1.17"
+    "validator": "^13.7.0"
   },
   "_moduleAliases": {
     "@": ".",
